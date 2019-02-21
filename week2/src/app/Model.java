@@ -60,13 +60,24 @@ public class Model {
         return weight;
     }
 
+    public long getWeightKg(){
+        return (long) (weight / 2.204);
+    }
+
     /**
      * @param weight the weight to set
      */
-    public void setWeight(double weight) {
-        if((weight >=80)
-        &&(weight <= 280)){
-            this.weight = weight;
+    public final void setWeight(double pounds) {
+        if((pounds >=80)
+        &&(pounds <= 280)){
+            this.weight = pounds;
+        }
+        
+    }
+    public final void setWeight(long kilograms) {
+        if((kilograms >=36.28)
+        &&(kilograms <= 127)){
+            this.weight = kilograms * 2.204;
         }
         
     }
@@ -81,10 +92,19 @@ public class Model {
     /**
      * @param height the height to set
      */
-    public void setHeight(int height) {
-        if((height >=24)
-        &&(height <= 84)){
-                this.height = height;
+    public final void setHeight(int feet,int inches) {
+        if((feet >=24)
+        &&(feet <= 84)){
+                this.height = feet + (inches/12);
+                
+            }
+        
+    }
+    public final void setHeight(int inches) {
+        if((inches >=24)
+        &&(inches <= 84)){
+                this.height = inches;
+                
             }
         
     }
@@ -92,7 +112,7 @@ public class Model {
     /**
      * @return the lastName
      */
-    public String getLastName() {
+    public final String getLastName() {
         return lastName;
     }
 
@@ -128,11 +148,11 @@ public class Model {
     }
 
     public Model(String firstName, String lastName, 
-    int height, double weight, boolean canTravel, 
+    int feet, double weight, boolean canTravel, 
     boolean smokes) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
-        this.setHeight(height);
+        this.setHeight(feet);
         this.setWeight(weight);
         this.canTravel = canTravel;
         this.smokes = smokes;
@@ -140,10 +160,10 @@ public class Model {
     }
 
     public Model(String firstName, String lastName, 
-    int height, double weight) {
+    int feet, double weight) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
-        this.setHeight(height);
+        this.setHeight(feet);
         this.setWeight(weight);
         this.canTravel = true;
         this.smokes = false;
