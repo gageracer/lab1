@@ -11,10 +11,13 @@ public class Driver {
         p1.gender = "nonbinary";
         p1.nationality = "Italian";*/
         Model jasper =  new Model();  
-        Model can = new Model("Can","Aygin",66,(160.93));
+        Model can = new Model("Can","Aygin",66,(165.93));
 
         jasper.printDetails();
         can.printDetails();
+        System.out.println(can.getWeightKg());
+        jasper.setHeight(26, 13);
+        jasper.printDetails();
 
     }
 
