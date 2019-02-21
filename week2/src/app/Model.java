@@ -15,6 +15,15 @@ public class Model {
         setFirstName("firstName");
         setLastName("lastName");
     }
+    
+    
+    /**
+     * @return the occupation
+     */
+    public static String getOccupation() {
+        return occupation;
+    }
+
 
     /**
      * @return the smokes
@@ -144,7 +153,7 @@ public class Model {
     public void printDetails(){
         System.out.println("Name: "+getFirstName()+" "+getLastName());
         System.out.println("Height: "+getHeight()+" inches");
-        System.out.println("Weight: "+ Math.round(getWeight())+ "pounds");
+        System.out.println("Weight: "+ Math.round(getWeight())+ " pounds");
         if(isCanTravel()){
             System.out.println("Does travel");
         }
